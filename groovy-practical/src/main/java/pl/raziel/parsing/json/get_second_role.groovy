@@ -1,4 +1,4 @@
-package pl.raziel.parsing
+package pl.raziel.parsing.json
 
 import groovy.json.JsonSlurper
 

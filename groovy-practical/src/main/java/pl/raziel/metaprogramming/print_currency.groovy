@@ -14,5 +14,5 @@ Number.metaClass.asCurrency = {
 }
 
 def amount = 123456.7890
-Locale.default = Locale.US
-assert amount.asCurrency() == '$123,456.79'
+//Locale.default = Locale.US
+assert amount.asCurrency() == '£123,456.79'

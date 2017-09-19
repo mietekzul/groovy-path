@@ -1,4 +1,4 @@
-package ast.immutable.ast.singleton
+package ast.singleton
 
 import pl.raziel.ast.singleton.Point
 import spock.lang.Specification

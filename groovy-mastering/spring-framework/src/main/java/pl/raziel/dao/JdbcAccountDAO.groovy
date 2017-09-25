@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
 import org.springframework.stereotype.Component
+import org.springframework.stereotype.Repository
 import pl.raziel.entities.Account
 
 import javax.sql.DataSource
 import java.sql.ResultSet
 
-@Component
+@Repository
 class JdbcAccountDAO implements AccountDAO {
     static int nextId = 3
     JdbcTemplate jdbcTemplate

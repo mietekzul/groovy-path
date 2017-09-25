@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import pl.raziel.dao.AccountDAO;
 import pl.raziel.entities.Account;
-import pl.raziel.repositories.AccountRepository;
 
 import java.math.BigDecimal;
 
@@ -14,25 +14,35 @@ import java.math.BigDecimal;
 public class AccountService {
 
     @Autowired
-    private AccountRepository accountRepository;
+    private AccountDAO dao;
 
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public BigDecimal getAccountBalance(int id) {
-        Account account = accountRepository.findOne(id);
+        Account account = dao.findAccountById(id);
         return account.getBalance();
     }
 
-    public BigDecimal depositIntoAcoount(int id, BigDecimal amount) {
-        Account account = accountRepository.findOne(id);
+    public BigDecimal depositIntoAccount(int id, BigDecimal amount) {
+        Account account = dao.findAccountById(id);
         account.deposit(amount);
-        accountRepository.save(account);
+        dao.updateAccount(account);
         return account.getBalance();
     }
 
-    public BigDecimal withdrawFromAccount(int id, BigDecimal amount){
-        Account account = accountRepository.findOne(id);
+    public BigDecimal withdrawFromAccount(int id, BigDecimal amount) {
+        Account account = dao.findAccountById(id);
         account.withdraw(amount);
-        accountRepository.save(account);
+        dao.updateAccount(account);
         return account.getBalance();
+    }
+
+    public boolean transferFunds(int fromId, int toId, BigDecimal amount) {
+        Account from = dao.findAccountById(fromId);
+        Account to = dao.findAccountById(toId);
+        from.withdraw(amount);
+        to.deposit(amount);
+        dao.updateAccount(from);
+        dao.updateAccount(to);
+        return true;
     }
 }

@@ -15,5 +15,6 @@
         <module>spock-framework</module>
         <module>spring-framework</module>
         <module>spring-refreshable-beans</module>
+        <module>groovy-jpa</module>
     </modules>
 </project>

@@ -6,15 +6,17 @@
         <artifactId>groovy-path</artifactId>
         <groupId>pl.raziel</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>groovy-mastering</artifactId>
+
     <modules>
         <module>spock-framework</module>
         <module>spring-framework</module>
         <module>spring-refreshable-beans</module>
         <module>groovy-jpa</module>
+        <module>groovy-aspects</module>
+        <module>groovy-functional</module>
     </modules>
+    <packaging>pom</packaging>
 </project>

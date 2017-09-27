@@ -12,7 +12,6 @@
         <module>groovy-fundamentals</module>
         <module>groovy-practical</module>
         <module>groovy-mastering</module>
-        <module>groovy-mastering/groovy-aspects</module>
     </modules>
 
     <dependencies>

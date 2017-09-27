@@ -6,7 +6,6 @@
     <groupId>pl.raziel</groupId>
     <artifactId>spring-framework</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>spring-framework</name>
     <description>Groovy and the Spring Framework</description>

@@ -17,6 +17,7 @@
         <module>groovy-jpa</module>
         <module>groovy-aspects</module>
         <module>groovy-functional</module>
+        <module>groovy-rest</module>
     </modules>
     <packaging>pom</packaging>
 </project>
